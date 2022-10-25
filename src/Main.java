@@ -1,23 +1,23 @@
 public class Main {
     public static void main(String[] args) {
-        int ContadorArvoreVerde = 0;
-        int ContadorArvoreVermelha = 0;
+        int counterGreenTree = 0;
+        int countRedTree = 0;
 
-        ArvoreFactory arvore = new ArvoreFactory();
+        TreeFactory tree = new TreeFactory();
 
         for (int i = 0; i < 500000;i++){
-        Arvore arvoreVerde = arvore.getArvore(10,10,"Verde","Cedro");
-        ContadorArvoreVerde = ContadorArvoreVerde +1;
+        Tree greenTree = tree.getTree(10,10,"Green","Cedro");
+            counterGreenTree = counterGreenTree +1;
         };
 
         for (int i = 0; i < 500000;i++){
-            Arvore arvoreVermelha = arvore.getArvore(10,10,"Vermelha","Pinheiro");
-            ContadorArvoreVermelha = ContadorArvoreVermelha +1;
+            Tree redTree = tree.getTree(10,10,"Red","Pinheiro");
+            countRedTree = countRedTree +1;
         };
 
-        System.out.println("Arvores Verdes:" + ContadorArvoreVerde + "\n Arvores Vermelhas:" + ContadorArvoreVermelha);
+        System.out.println("Green Tree:" + counterGreenTree + "\n Red Tree:" + countRedTree);
 
         Runtime runtime = Runtime.getRuntime();
-        System.out.println("Memória utilizada: " + (runtime.totalMemory() - runtime.freeMemory()) / (1024 * 1024));
+        System.out.println("Used Memory : " + (runtime.totalMemory() - runtime.freeMemory()) / (1024 * 1024));
     }
 }
